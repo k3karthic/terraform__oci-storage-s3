@@ -1,0 +1,4 @@
+compartment = "ocid1.tenancy.oc1..XXX"
+
+bucket_name = "<bucket name>"
+bucket_namespace = "<namespace>"
