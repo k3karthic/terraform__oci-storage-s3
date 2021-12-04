@@ -1,57 +1,52 @@
-# Terraform - Create an Oracle Object Storage Bucket with S3
+# Terraform — Create an Oracle Object Storage Bucket with S3
 
 Create an Object Storage Bucket in Oracle Cloud with a user and associated Customer Secret Key having full access to the bucket using the S3 API.
 
-## Input Variables
+## Code Mirrors
 
-Create a file to store the input variables using the sample file `india.tfvars.sample`. The file should be called `india.tfvars` or edit `bin/plan.sh` with the appropriate file name.
+* GitHub: [github.com/k3karthic/terraform__oci-storage-s3](https://github.com/k3karthic/terraform__oci-storage-s3/)
+* Codeberg: [codeberg.org/k3karthic/terraform__oci-storage-s3](https://codeberg.org/k3karthic/terraform__oci-storage-s3)
+
+## Configuration
+
+Create a file to store the [Terraform input variables](https://www.terraform.io/docs/language/values/variables.html). Use `india.tfvars.sample` as a reference. Keep `india.tfvars` as the filename or change the name in the following files,
+
+* `bin/plan.sh`
 
 ## Deployment
 
-### Step 1
-
-Create a Terraform plan by running plan.sh; the script will read input variables from the file india.tfvars
-
+**Step 1:** Use the following command to create a [Terraform plan](https://www.terraform.io/docs/cli/run/index.html#planning),
 ```
-./bin/plan.sh
+$ ./bin/plan.sh
 ```
 
-To avoid fetching the latest state of resources from OCI, run the following command.
-
+To avoid fetching the latest state of resources, use the following command,
 ```
-./bin/plan.sh --refresh=false
-```
-
-### Step 2
-
-Review the generated plan
-
-```
-./bin/view.sh
+$ ./bin/plan.sh -refresh=false
 ```
 
-### Step 3
-
-Run the verified plan
-
+**Step 2:** Review the plan using the following command,
 ```
-./bin/apply.sh
+$ ./bin/view.sh
+```
+
+**Step 3:** [Apply](https://www.terraform.io/docs/cli/run/index.html#applying) the plan using the following command,
+```
+$ ./bin/apply.sh
 ```
 
 ## Encryption
 
-Sensitive files like the input variables (india.tfvars) and Terraform state files are encrypted before being stored in the repository. 
-
-You must add the unencrypted file paths to `.gitignore`.
+Encrypt sensitive files (SSH private keys) before saving them. `.gitignore` must contain the unencrypted file paths.
 
 Use the following command to decrypt the files after cloning the repository,
 
 ```
-./bin/decrypt.sh
+$ ./bin/decrypt.sh
 ```
 
 Use the following command after running terraform to update the encrypted files,
 
 ```
-./bin/encrypt.sh <gpg key id>
+$ ./bin/encrypt.sh <gpg key id>
 ```
