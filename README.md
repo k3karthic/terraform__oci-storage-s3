@@ -37,7 +37,7 @@ $ ./bin/apply.sh
 
 ## Encryption
 
-Encrypt sensitive files (SSH private keys) before saving them. `.gitignore` must contain the unencrypted file paths.
+Encrypt sensitive files (Terraform state) before saving them. `.gitignore` must contain the unencrypted file paths.
 
 Use the following command to decrypt the files after cloning the repository,
 
