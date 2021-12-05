@@ -11,7 +11,8 @@ Create an Object Storage Bucket in Oracle Cloud and a Customer Master Key with f
 
 Create a file to store the [Terraform input variables](https://www.terraform.io/docs/language/values/variables.html). Use `india.tfvars.sample` as a reference. Keep `india.tfvars` as the filename or change the name in the following files,
 
-* `bin/plan.sh`
+1. `.gitignore`
+1. `bin/plan.sh`
 
 ## Deployment
 
@@ -37,16 +38,14 @@ $ ./bin/apply.sh
 
 ## Encryption
 
-Encrypt sensitive files (Terraform state) before saving them. `.gitignore` must contain the unencrypted file paths.
+Encrypt sensitive files (Terraform [input variables](https://www.terraform.io/docs/language/values/variables.html) and [state](https://www.terraform.io/docs/language/state/index.html)) before saving them. `.gitignore` must contain the unencrypted file paths.
 
 Use the following command to decrypt the files after cloning the repository,
-
 ```
 $ ./bin/decrypt.sh
 ```
 
-Use the following command after running terraform to update the encrypted files,
-
+Use the following command after running `bin/apply.sh` to encrypt the updated state files,
 ```
 $ ./bin/encrypt.sh <gpg key id>
 ```
