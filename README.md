@@ -4,6 +4,11 @@ Create the following in Oracle Cloud,
 * [Object Storage](https://www.oracle.com/cloud/storage/object-storage/) Bucket
 * Amazon S3 Compatibility Access Key/ Secret Key pair.
 
+The keypair generated is used by the Ansible script below,
+* ansible__ipfs
+  * GitHub: [github.com/k3karthic/ansible__ipfs](https://github.com/k3karthic/ansible__ipfs)
+  * Codeberg: [codeberg.org/k3karthic/ansible__ipfs](https://codeberg.org/k3karthic/ansible__ipfs)
+
 ## Code Mirrors
 
 * GitHub: [github.com/k3karthic/terraform__oci-storage-s3](https://github.com/k3karthic/terraform__oci-storage-s3/)
@@ -43,6 +48,13 @@ $ ./bin/view.sh
 ```
 $ ./bin/apply.sh
 ```
+
+**Step 4:** Get the access key id and secret key using the following command,
+```
+$ terraform state show oci_identity_customer_secret_key.s3
+```
+
+![terraform output screenshot](resources/terraform_output.png)
 
 ## Encryption
 
