@@ -1,6 +1,8 @@
 # Terraform — Create an Oracle Object Storage Bucket with S3
 
-Create an Object Storage Bucket in Oracle Cloud and a Customer Master Key with full access using the S3 API.
+Create the following in Oracle Cloud,
+* [Object Storage](https://www.oracle.com/cloud/storage/object-storage/) Bucket
+* Amazon S3 Compatibility Access Key/ Secret Key pair.
 
 ## Code Mirrors
 
