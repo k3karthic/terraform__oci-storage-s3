@@ -54,7 +54,7 @@ $ ./bin/view.sh
 $ ./bin/apply.sh
 ```
 
-**Step 4:** Get the access key id and secret key using the following command,
+**Step 4:** Get the Access Key ID and Secret Key using the following command,
 ```
 $ terraform state show oci_identity_customer_secret_key.s3
 ```
