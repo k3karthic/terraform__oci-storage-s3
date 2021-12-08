@@ -16,10 +16,15 @@ The keypair generated is used by the Ansible script below,
 
 ## Configuration
 
-Create a file to store the [Terraform input variables](https://www.terraform.io/docs/language/values/variables.html). Use `india.tfvars.sample` as a reference. Keep `india.tfvars` as the filename or change the name in the following files,
-
+**Step 1:** Create a file to store the [Terraform input variables](https://www.terraform.io/docs/language/values/variables.html). Use `india.tfvars.sample` as a reference. Keep `india.tfvars` as the filename or change the name in the following files,
 1. `.gitignore`
 1. `bin/plan.sh`
+
+**Step 2:** Set `bucket_name` and `bucket_namespace` as desired.
+
+**Step 2:** Set `compartment` to the desired value. List of compartments in your Oracle Cloud account are at [cloud.oracle.com/identity/compartments](https://cloud.oracle.com/identity/compartments).
+
+![compartment list screenshot](resources/compartment.png)
 
 ## Authentication
 
