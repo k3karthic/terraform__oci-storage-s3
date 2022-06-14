@@ -61,7 +61,7 @@ resource "oci_identity_policy" "s3" {
   ]
 }
 
-resource "oci_identity_customer_secret_key" "s3" {
+resource "oci_identity_customer_secret_key" "s3_v2" {
   display_name = "ipfs-s3-csk"
   user_id      = oci_identity_user.s3.id
 }
